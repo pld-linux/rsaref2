@@ -9,7 +9,7 @@ diff -Naur rsaref2/install/unix/makefile rsaref2.work/install/unix/makefile
 +all : clean rdemo dhdemo
  
 +clean : 
-+	rm -f *.o rdemo dhdemo librsaref2.so rsaref.a
++	rm -f *.o rdemo dhdemo 
 +	 
  rdemo : rdemo.$(O) $(RSAREFLIB)
  	cc -o $@ rdemo.$(O) $(RSAREFLIB)
@@ -53,7 +53,7 @@ diff -Naur rsaref2/install/unix/makefile.shared rsaref2.work/install/unix/makefi
 +all : clean rdemo dhdemo
 +
 +clean : 
-+	rm -f *.o rdemo dhdemo librsaref2.so rsaref.a
++	rm -f *.o rdemo dhdemo 
 +	
 +rdemo : rdemo.$(O) $(RSAREFLIB)
 +	cc -o $@ rdemo.$(O) $(RSAREFLIB)
