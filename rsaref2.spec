@@ -70,8 +70,6 @@ install source/*.h $RPM_BUILD_ROOT%{_includedir}/rsaref2
 
 ln -sf %{_libdir}/librsaref2.so.%{version} $RPM_BUILD_ROOT%{_libdir}/librsaref2.so
 
-gzip -9nf doc/*
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -87,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(644,root,root) %{_libdir}/librsaref2.so
 %attr(644,root,root) %{_includedir}/rsaref2/*
-%doc doc/*.gz
+%doc doc/*
 
 %files static
 %defattr(644,root,root,755)
