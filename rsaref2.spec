@@ -6,6 +6,7 @@ Release:	1
 License:	distributable
 Group:		Development/Libraries
 Source0:	%{name}.tar.gz
+# Source0-md5:	0b474c97bf1f1c0d27e5a95f1239c08d
 Patch0:		%{name}-makefiles.patch
 URL:		http://www.rsasecurity.com/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
