@@ -16,9 +16,9 @@ RSAREF to serve as a portable, educational, reference implementation
 of cryptography.
 
 %description -l pl
-Nazwa "RSAREF" oznacza "RSA reference". Intencj± RSA Laboratories
-by³o dostarczenie ³atwej do przeniesienia, edukacyjnej,
-referencyjnej implementacji kryptografii.
+Nazwa "RSAREF" oznacza "RSA reference". Intencj± RSA Laboratories by³o
+dostarczenie ³atwej do przeniesienia, edukacyjnej, referencyjnej
+implementacji kryptografii.
 
 %package devel
 Summary:	rsaref2 Library Development
@@ -48,7 +48,7 @@ Statyczna biblioteka rsaref2.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1 
+%patch0 -p1
 
 %build
 %{__make} -C install/unix
