@@ -14,13 +14,18 @@ Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
 Source0:	%{name}.tar.gz
 Patch0:		%{name}-makefiles.patch
-URL:		http://www.rsa.com
+URL:		http://www.rsasecurity.com
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The name "RSAREF" means "RSA reference." RSA Laboratories intends
+The name "RSAREF" means "RSA reference". RSA Laboratories intends
 RSAREF to serve as a portable, educational, reference implementation
 of cryptography.
+
+%description -l pl
+Nazwa "RSAREF" oznacza "RSA reference". Intencj╠ RSA Laboratories 
+byЁo dostarczenie Ёatwej do przeniesienia, edukacyjnej, 
+referencyjnej implementacji kryptografii.
 
 %package -n rsaref2-devel
 Summary:	rsaref2 Library Development 
@@ -103,7 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(644,root,root) %{_libdir}/librsaref2.so
 %attr(644,root,root) %{_includedir}/rsaref2/* 
-%doc doc/*
+%doc doc/*.gz
 
 %files -n rsaref2-static
 %defattr(644,root,root,755)
