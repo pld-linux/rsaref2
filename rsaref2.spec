@@ -1,6 +1,6 @@
 Summary:	RSAREF(TM): A Cryptographic Toolkit
 Summary(pl):	RSAREF(TM): Biblioteka kryptograficzna
-Name:		rsaref2 		
+Name:		rsaref2
 Version:	2.0
 Release:	1
 License:	distributable
@@ -14,7 +14,7 @@ Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
 Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Source0:	%{name}.tar.gz
 Patch0:		%{name}-makefiles.patch
-URL:		http://www.rsasecurity.com
+URL:		http://www.rsasecurity.com/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -23,12 +23,12 @@ RSAREF to serve as a portable, educational, reference implementation
 of cryptography.
 
 %description -l pl
-Nazwa "RSAREF" oznacza "RSA reference". Intencj± RSA Laboratories 
-by³o dostarczenie ³atwej do przeniesienia, edukacyjnej, 
+Nazwa "RSAREF" oznacza "RSA reference". Intencj± RSA Laboratories
+by³o dostarczenie ³atwej do przeniesienia, edukacyjnej,
 referencyjnej implementacji kryptografii.
 
-%package -n rsaref2-devel
-Summary:	rsaref2 Library Development 
+%package devel
+Summary:	rsaref2 Library Development
 Summary(pl):	Czê¶æ dla programistów biblioteki rsaref2
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
@@ -38,18 +38,18 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
 Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
-Requires:	rsaref2
+Requires:	%{name} = %{version}
 
-%description -n rsaref2-devel
+%description devel
 The rsaref2-devel package contains the header files and some
 documentation needed to develop application with rsaref2.
 
-%description -n rsaref2-devel -l pl
+%description devel -l pl
 Pakiet rsaref2-devel zawiera pliki nag³ówkowe i dokumentacjê,
 potrzebne do kompilowania aplikacji korzystaj±cych z rsaref2
 
-%package -n rsaref2-static
-Summary:	Static rsaref2 Library 
+%package static
+Summary:	Static rsaref2 Library
 Summary(pl):	Statyczna biblioteka rsaref2
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
@@ -59,12 +59,12 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
 Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
-Requires:	rsaref2-devel 
+Requires:	%{name}-devel = %{version}
 
-%description -n rsaref2-static
+%description static
 Static rsaref2 library.
 
-%description -n rsaref2-static -l pl
+%description static -l pl
 Statyczna biblioteka rsaref2.
 
 %prep
@@ -72,7 +72,7 @@ Statyczna biblioteka rsaref2.
 %patch0 -p1 
 
 %build
-%{__make} -C install/unix 
+%{__make} -C install/unix
 %{__make} -C install/unix clean
 %{__make} -C install/unix -f makefile.shared
 
@@ -89,27 +89,27 @@ install install/unix/librsaref2.so $RPM_BUILD_ROOT%{_libdir}/librsaref2.so.%{ver
 install install/unix/rsaref.a $RPM_BUILD_ROOT%{_libdir}/librsaref2.a
 install source/*.h $RPM_BUILD_ROOT%{_includedir}/rsaref2
 
-ln -s %{_libdir}/librsaref2.so.%{version} $RPM_BUILD_ROOT%{_libdir}/librsaref2.so
+ln -sf %{_libdir}/librsaref2.so.%{version} $RPM_BUILD_ROOT%{_libdir}/librsaref2.so
 
-gzip -9nf doc/* 
-
-%post -p /sbin/ldconfig 
-%postun -p /sbin/ldconfig 
+gzip -9nf doc/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
+%files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %attr(644,root,root) %{_libdir}/librsaref2.so.%{version}
 
-%files -n rsaref2-devel
+%files devel
 %defattr(644,root,root,755)
 %attr(644,root,root) %{_libdir}/librsaref2.so
-%attr(644,root,root) %{_includedir}/rsaref2/* 
+%attr(644,root,root) %{_includedir}/rsaref2/*
 %doc doc/*.gz
 
-%files -n rsaref2-static
+%files static
 %defattr(644,root,root,755)
 %attr(644,root,root) %{_libdir}/librsaref2.a
