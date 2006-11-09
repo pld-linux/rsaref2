@@ -25,7 +25,7 @@ implementacji kryptografii.
 Summary:	rsaref2 Library Development
 Summary(pl):	Czê¶æ dla programistów biblioteki rsaref2
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 The rsaref2-devel package contains the header files and some
@@ -39,7 +39,7 @@ potrzebne do kompilowania aplikacji korzystaj±cych z rsaref2
 Summary:	Static rsaref2 Library
 Summary(pl):	Statyczna biblioteka rsaref2
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static rsaref2 library.
