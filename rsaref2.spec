@@ -1,5 +1,5 @@
 Summary:	RSAREF(TM): A Cryptographic Toolkit
-Summary(pl.UTF-8):   RSAREF(TM): Biblioteka kryptograficzna
+Summary(pl.UTF-8):	RSAREF(TM): Biblioteka kryptograficzna
 Name:		rsaref2
 Version:	2.0
 Release:	1
@@ -23,7 +23,7 @@ implementacji kryptografii.
 
 %package devel
 Summary:	rsaref2 Library Development
-Summary(pl.UTF-8):   Część dla programistów biblioteki rsaref2
+Summary(pl.UTF-8):	Część dla programistów biblioteki rsaref2
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -37,7 +37,7 @@ potrzebne do kompilowania aplikacji korzystających z rsaref2
 
 %package static
 Summary:	Static rsaref2 Library
-Summary(pl.UTF-8):   Statyczna biblioteka rsaref2
+Summary(pl.UTF-8):	Statyczna biblioteka rsaref2
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
