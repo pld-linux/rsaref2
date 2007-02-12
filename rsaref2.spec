@@ -1,5 +1,5 @@
 Summary:	RSAREF(TM): A Cryptographic Toolkit
-Summary(pl):	RSAREF(TM): Biblioteka kryptograficzna
+Summary(pl.UTF-8):   RSAREF(TM): Biblioteka kryptograficzna
 Name:		rsaref2
 Version:	2.0
 Release:	1
@@ -16,14 +16,14 @@ The name "RSAREF" means "RSA reference". RSA Laboratories intends
 RSAREF to serve as a portable, educational, reference implementation
 of cryptography.
 
-%description -l pl
-Nazwa "RSAREF" oznacza "RSA reference". Intencj± RSA Laboratories by³o
-dostarczenie ³atwej do przeniesienia, edukacyjnej, referencyjnej
+%description -l pl.UTF-8
+Nazwa "RSAREF" oznacza "RSA reference". IntencjÄ… RSA Laboratories byÅ‚o
+dostarczenie Å‚atwej do przeniesienia, edukacyjnej, referencyjnej
 implementacji kryptografii.
 
 %package devel
 Summary:	rsaref2 Library Development
-Summary(pl):	Czê¶æ dla programistów biblioteki rsaref2
+Summary(pl.UTF-8):   CzÄ™Å›Ä‡ dla programistÃ³w biblioteki rsaref2
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -31,20 +31,20 @@ Requires:	%{name} = %{version}-%{release}
 The rsaref2-devel package contains the header files and some
 documentation needed to develop application with rsaref2.
 
-%description devel -l pl
-Pakiet rsaref2-devel zawiera pliki nag³ówkowe i dokumentacjê,
-potrzebne do kompilowania aplikacji korzystaj±cych z rsaref2
+%description devel -l pl.UTF-8
+Pakiet rsaref2-devel zawiera pliki nagÅ‚Ã³wkowe i dokumentacjÄ™,
+potrzebne do kompilowania aplikacji korzystajÄ…cych z rsaref2
 
 %package static
 Summary:	Static rsaref2 Library
-Summary(pl):	Statyczna biblioteka rsaref2
+Summary(pl.UTF-8):   Statyczna biblioteka rsaref2
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static rsaref2 library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka rsaref2.
 
 %prep
