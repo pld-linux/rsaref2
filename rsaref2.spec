@@ -84,9 +84,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/librsaref2.so
-%{_includedir}/rsaref2/*
 %doc doc/*
+%{_libdir}/librsaref2.so
+%{_includedir}/rsaref2
 
 %files static
 %defattr(644,root,root,755)
